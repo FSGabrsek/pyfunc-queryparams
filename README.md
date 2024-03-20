@@ -12,11 +12,13 @@ returns a list of 4 articles
 - 100.152.072
 - 100.172.050
 
-Azure's provides native support handling this, but concatenates all entries into a comma-separated string. This means the entries need to be manually casted to a list. Alternatively, python's urllib module can be used to parse the url and querystring, bypassing Azure's handling.
+Azure provides native support handling this in the HttpRequest class, but concatenates all entries to a comma-separated string. This means the entries need to be manually casted to a list. Alternatively, python's **urllib** module can be used to parse the url and querystring, bypassing Azure's handling by acting directly on the url.
 
 ## Alternative
 Because Azure's implementation requires that the querystring be manually split, a single parameter containing a comma-separated string of entries can be passed:
 
 ``/articles?id=100.111.002,100.112.221,100.152.072,100.172.050``
 
-This provides the same result, but requires that the string is manually split into a list. This method is not generally accepted.
+This provides the same result, but requires that the string is manually split into a list. This method is not generally accepted and cannot be used with urllib.
+
+> Note: Handling the query parameters as a comma-separated list can lead to problems if the parameters contain comma's (e.g. € 736,00/1,000,000/{"id": 100.112.222", "model": "HGC 10 S 20"})
