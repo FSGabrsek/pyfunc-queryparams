@@ -11,7 +11,7 @@ app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
 Parse query parameters as comma-separated list by splitting the string on ','
 
 Accepts:
-comma-separated list in one parameter
+comma-separated list in one parameter (non-standard)
 /articles?id=151.010.001,151.010.002,151.010.003
 
 concetanated parameters
