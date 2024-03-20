@@ -19,7 +19,7 @@ concetanated parameters
 Note: Trailing comma results in additional 'empty' value (can be filtered out)
 /articles?id=151.010.001 -> ["151.010.001", ""]
 """
-@app.route(route="/ex1/articles",
+@app.route(route="ex1/articles",
            methods=('GET',))
 def http_get_article(req: func.HttpRequest) -> func.HttpResponse: 
     # Get 'id' param or default to empty string
