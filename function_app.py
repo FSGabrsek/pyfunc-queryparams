@@ -58,7 +58,7 @@ def http_get_articles_urllib(req: func.HttpRequest) -> func.HttpResponse:
     query_params = parse_qs(urlparse(req.url).query)
     logging.info(f"quary parameters {query_params}, {type(query_params)}")
 
-    # get article id's from quary params or default to empty list
+    # get article id's from query params or default to empty list
     articles = query_params.get("id", [])
     logging.info(f"articles list {articles}, {type(articles)}")
 
