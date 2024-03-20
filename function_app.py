@@ -17,7 +17,7 @@ comma-separated list in one parameter (non-standard)
 concetanated parameters
 /articles?id=151.010.001?id=151.010.002?id=151.010.003
 
-Note: Trailing comma or no id's results in additional 'empty' value (can be filtered out)
+Note: Trailing comma or no ids results in additional 'empty' value (can be filtered out)
 /articles?id=151.010.001 -> ["151.010.001", ""]
 /articles?id= -> [""]
 /articles= -> [""]
@@ -43,7 +43,7 @@ def http_get_articles_split(req: func.HttpRequest) -> func.HttpResponse:
 
 """
 # Example 2: parse with urllib
-use urllib to parse url's and query strings
+use urllib to parse urls and query strings
 
 concetanated parameters
 /articles?id=151.010.001?id=151.010.002?id=151.010.003
@@ -58,7 +58,7 @@ def http_get_articles_urllib(req: func.HttpRequest) -> func.HttpResponse:
     query_params = parse_qs(urlparse(req.url).query)
     logging.info(f"quary parameters {query_params}, {type(query_params)}")
 
-    # get article id's from query params or default to empty list
+    # get article ids from query params or default to empty list
     articles = query_params.get("id", [])
     logging.info(f"articles list {articles}, {type(articles)}")
 

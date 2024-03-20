@@ -21,4 +21,4 @@ Because Azure's implementation requires that the querystring be manually split, 
 
 This provides the same result, but requires that the string is manually split into a list. This method is not generally accepted and cannot be used with urllib.
 
-> Note: Handling the query parameters as a comma-separated list can lead to problems if the parameters contain comma's (e.g. €736,00 / 1,000,000 / {"id": 100.112.222", "model": "HGC 10 S 20"})
+> Note: Handling the query parameters as a comma-separated list can lead to problems if the parameters contain commas (e.g. €736,00 / 1,000,000 / {"id":"100.112.222","model":"HGC 10 S 20"})
