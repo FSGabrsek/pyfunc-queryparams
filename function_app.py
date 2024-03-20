@@ -17,8 +17,11 @@ comma-separated list in one parameter (non-standard)
 concetanated parameters
 /articles?id=151.010.001?id=151.010.002?id=151.010.003
 
-Note: Trailing comma results in additional 'empty' value (can be filtered out)
+Note: Trailing comma or no id's results in additional 'empty' value (can be filtered out)
 /articles?id=151.010.001 -> ["151.010.001", ""]
+/articles?id= -> [""]
+/articles= -> [""]
+
 """
 @app.route(route="ex1/articles",
            methods=('GET',))
