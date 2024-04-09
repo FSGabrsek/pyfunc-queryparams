@@ -48,8 +48,8 @@ use urllib to parse urls and query strings
 concetanated parameters
 /articles?id=151.010.001?id=151.010.002?id=151.010.003
 
-Note: Requires 'urllib' package"
-pip install urllib
+Note: Requires 'urllib3' package"
+pip install urllib3
 """
 @app.route(route="ex2/articles",
            methods=('GET',))
